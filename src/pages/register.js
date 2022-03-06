@@ -22,7 +22,6 @@ const Register = () => {
       email: '',
       firstName: '',
       lastName: '',
-      password: '',
       policy: false
     },
     validationSchema: Yup.object({
@@ -56,7 +55,7 @@ const Register = () => {
         )
     }),
     onSubmit: () => {
-      router.push('/');
+      router.push('/customers');
     }
   });
 
@@ -64,7 +63,7 @@ const Register = () => {
     <>
       <Head>
         <title>
-          Register | Material Kit
+          Register | Emergency Service
         </title>
       </Head>
       <Box
@@ -77,17 +76,7 @@ const Register = () => {
         }}
       >
         <Container maxWidth="sm">
-          <NextLink
-            href="/"
-            passHref
-          >
-            <Button
-              component="a"
-              startIcon={<ArrowBackIcon fontSize="small" />}
-            >
-              Dashboard
-            </Button>
-          </NextLink>
+
           <form onSubmit={formik.handleSubmit}>
             <Box sx={{ my: 3 }}>
               <Typography
@@ -161,36 +150,9 @@ const Register = () => {
                 ml: -1
               }}
             >
-              <Checkbox
-                checked={formik.values.policy}
-                name="policy"
-                onChange={formik.handleChange}
-              />
-              <Typography
-                color="textSecondary"
-                variant="body2"
-              >
-                I have read the
-                {' '}
-                <NextLink
-                  href="#"
-                  passHref
-                >
-                  <Link
-                    color="primary"
-                    underline="always"
-                    variant="subtitle2"
-                  >
-                    Terms and Conditions
-                  </Link>
-                </NextLink>
-              </Typography>
+
             </Box>
-            {Boolean(formik.touched.policy && formik.errors.policy) && (
-              <FormHelperText error>
-                {formik.errors.policy}
-              </FormHelperText>
-            )}
+
             <Box sx={{ py: 2 }}>
               <Button
                 color="primary"
@@ -200,24 +162,22 @@ const Register = () => {
                 type="submit"
                 variant="contained"
               >
-                Sign Up Now
+                Submit
               </Button>
             </Box>
             <Typography
               color="textSecondary"
               variant="body2"
             >
-              Have an account?
-              {' '}
               <NextLink
-                href="/login"
+                href="/customers"
                 passHref
               >
                 <Link
                   variant="subtitle2"
                   underline="hover"
                 >
-                  Sign In
+                  Go Back
                 </Link>
               </NextLink>
             </Typography>

@@ -29,23 +29,13 @@ export const CustomerListToolbar = (props) => (
         Customers
       </Typography>
       <Box sx={{ m: 1 }}>
-        <Button
-          startIcon={(<UploadIcon fontSize="small" />)}
-          sx={{ mr: 1 }}
-        >
-          Import
-        </Button>
-        <Button
-          startIcon={(<DownloadIcon fontSize="small" />)}
-          sx={{ mr: 1 }}
-        >
-          Export
-        </Button>
+
         <Button
           color="primary"
           variant="contained"
+          href={'/register'}
         >
-          Add Customers
+          Add Service Provider
         </Button>
       </Box>
     </Box>
